@@ -1,0 +1,123 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0fdf4; /* Light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#gameContainer {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4caf50; /* Light green */
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Cell container styles */
+#cellContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #e8f5e9; /* Light green */
+    border: 2px solid #4caf50; /* Green border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #388e3c; /* Dark green text */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Hover and active effects */
+.cell:hover {
+    background-color: #c8e6c9; /* Lighter green on hover */
+    transform: scale(1.1);
+}
+
+.cell:active {
+    transform: scale(1);
+}
+
+/* Status text */
+#statusText {
+    color: #4caf50;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Restart button */
+#restartBtn {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Light green */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#restartBtn:hover {
+    background-color: #388e3c; /* Darker green */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Winner and Draw animations */
+#winner, #draw {
+    animation: pulse 1s infinite;
+    font-size: 1.5rem;
+    color: #388e3c;
+    font-weight: bold;
+}
+
